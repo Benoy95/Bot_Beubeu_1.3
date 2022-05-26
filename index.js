@@ -59,7 +59,7 @@ client.on("messageCreate",async message => {
     else if(message.content === prefix + "hymne"){
         message.reply(";;play https://www.youtube.com/watch?v=GLi-UF9U-RI&ab_channel=ScorpioMusic");
     }
-    else if(message.content === prefix + " aled"){
+    else if(message.content === prefix + "aled"){
         const embed = new MessageEmbed()
         .setColor('#0099ff')
         .setTitle('Commandes pour t aider gros naze')
