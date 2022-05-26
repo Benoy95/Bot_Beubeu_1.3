@@ -58,7 +58,7 @@ client.on("messageCreate",async message => {
         message.reply("Michel ou Michael ou encore DJ MICK! adore la musique MAIS SURTOUT LES VACANCES D'ETE !!, il est un peut con aussi...");
     }
     else if(message.content === prefix + "hymne"){
-        message.reply(";;play https://www.youtube.com/watch?v=GLi-UF9U-RI&ab_channel=ScorpioMusic");
+        message.channel.send(";;play https://www.youtube.com/watch?v=GLi-UF9U-RI&ab_channel=ScorpioMusic");
     }
     else if(message.content === prefix + "aled"){
         const embed = new MessageEmbed()
