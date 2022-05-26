@@ -60,6 +60,9 @@ client.on("messageCreate",async message => {
     else if(message.content === prefix + "Mathieu?"){
         message.reply("Ce type est térrifiant <:japanese_ogre:979430602841411596>");
     }
+    else if(message.content === prefix + "Valentin?"){
+        message.reply("txt");
+    }
     else if(message.content === prefix + "hymne"){
         message.channel.send(";;play https://www.youtube.com/watch?v=GLi-UF9U-RI&ab_channel=ScorpioMusic");
     }
