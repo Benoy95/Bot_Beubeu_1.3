@@ -15,6 +15,7 @@ const fetch = require('node-fetch');
 // When the client is ready, run this code (only once)
 client.on("ready", () => {
 	console.log('Ready!');
+    client.setActivity('beubeu aled', { type: 'COMMAND : ' })
 
 });
 
