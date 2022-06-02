@@ -3,12 +3,17 @@ const Discord = require('discord.js');
 const { token } = require('./config.json');
 var DateCalculator = require('date-calculator');
 const { MessageActionRow, MessageButton, MessageEmbed } = require('discord.js');
+const { joinVoiceChannel } = require('@discordjs/voice');
 
 // Create a new client instance
 const client = new Discord.Client({ intents: [
     Discord.Intents.FLAGS.GUILDS,
     Discord.Intents.FLAGS.GUILD_MESSAGES
 ] });
+
+
+
+
 const prefix = "beubeu ";
 const fetch = require('node-fetch');
 
@@ -99,7 +104,18 @@ client.on("messageCreate",async message => {
         message.reply({embeds : [embed]});
 
 
-     } //Fin if 
+     }
+     else if (message.content === prefix + "voc") {
+        var VC = message.member.voiceChannel;
+        if (!VC)
+            return message.reply("MESSAGE IF NOT IN A VOICE CHANNEL")
+        VC.join()
+        .then(connection => {
+            const dispatcher = connection.playFile('../Benoit_Tourne.MP3');
+            dispatcher.on("end", end => {VC.leave()});
+        })
+        .catch(console.error);
+        }; //Fin if 
 
 })
 
