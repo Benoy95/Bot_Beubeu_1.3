@@ -106,15 +106,11 @@ client.on("messageCreate",async message => {
 
      }
      else if (message.content === prefix + "voc") {
-        var VC = message.member.voiceChannel;
-        if (!VC)
-            return message.reply("MESSAGE IF NOT IN A VOICE CHANNEL")
-        VC.join()
-        .then(connection => {
-            const dispatcher = connection.playFile('../Benoit_Tourne.MP3');
-            dispatcher.on("end", end => {VC.leave()});
-        })
-        .catch(console.error);
+        var voiceChannel = message.member.voice.channel;
+        voiceChannel.join().then(connection =>{}).catch(err => console.log(err));
+        const dispatcher = connection.play('./Benoit_Tourne.mp3');
+        dispatcher.on("end", end => {});
+        voiceChannel.leave();
         }; //Fin if 
 
 })
