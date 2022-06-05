@@ -106,7 +106,7 @@ client.on("messageCreate",async message => {
 
      }
      else if (message.content === prefix + "voc") {
-        message.reply("oui");
+       // message.reply("oui");
         joinVoiceChannel = message.member.voice.channel; 
         message.reply("oui 1");
         joinVoiceChannel.join()
