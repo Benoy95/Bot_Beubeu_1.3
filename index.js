@@ -112,7 +112,7 @@ client.on("messageCreate",async message => {
                 const dispatcher = connection.play('./Benoit_Tourne.mp3', { volume: 0.5 });
              })
              .catch( message.reply("erreur"));
-
+             message.reply("erreur");
         }; //Fin if 
 
 })
