@@ -106,9 +106,13 @@ client.on("messageCreate",async message => {
 
      }
      else if (message.content === prefix + "voc") {
-        var voiceChannel = message.member.voice.channel;
-        voiceChannel.join().then(connection =>{}).catch(err => console.log(err));
-        const dispatcher = connection.play('./Benoit_Tourne.mp3');
+        const voiceChannel = message.member.voice.channel;
+        voiceChannel.join()
+             .then(connection => {
+                const dispatcher = connection.play('./Benoit_Tourne.mp3', { volume: 0.5 });
+             })
+             .catch(console.error);
+
         }; //Fin if 
 
 })
