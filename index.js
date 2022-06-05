@@ -107,8 +107,8 @@ client.on("messageCreate",async message => {
      }
      else if (message.content === prefix + "voc") {
         //message.reply("oui");
-        const voiceChannel =  message.member.voice.channel;
-        message.reply("oui 1");
+        const voiceChannel =  message.member.voiceChannel
+        //message.reply("oui 1");
         voiceChannel.join()
              .then(connection => {
                 message.reply("oui 2");
