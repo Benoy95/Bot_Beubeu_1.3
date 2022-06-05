@@ -106,18 +106,9 @@ client.on("messageCreate",async message => {
 
      }
      else if (message.content === prefix + "voc") {
-        const channel = client.channels.get("mychannelid");
-        if (!channel) return console.error("The channel does not exist!");
-        channel.join().then(connection => {
-          // Yay, it worked!
-          const dispatcher = connection.play('./Benoit_Tourne.mp3');
-            dispatcher.on("end", end => {});
-            voiceChannel.leave();
-          console.log("Successfully connected.");
-        }).catch(e => {
-          // Oh no, it errored! Let's log it to console :)
-          console.error(e);
-        });
+        var voiceChannel = message.member.voice.channel;
+        voiceChannel.join().then(connection =>{}).catch(err => console.log(err));
+        const dispatcher = connection.play('./Benoit_Tourne.mp3');
         }; //Fin if 
 
 })
